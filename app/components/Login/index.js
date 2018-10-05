@@ -40,7 +40,7 @@ const StyledTextField = withStyles({
 class Login extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <StyledGrid container justify="center" direction="row" alignItems="center">
+      <StyledGrid container justify="center" direction="column" alignItems="center">
         <StyledPaper>
           <Typography variant="headline" gutterBottom>
             Login

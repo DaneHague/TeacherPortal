@@ -17,6 +17,7 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Nav from 'components/NavigationBar/index';
+import LoginPage from 'containers/LoginPage/index';
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
       <Nav/>
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/Login" component={LoginPage} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>

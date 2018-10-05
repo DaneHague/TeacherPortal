@@ -1,74 +1,47 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
-import Button from 'material-ui/Button';
-import { Link } from 'react-router-dom';
-import withTheme from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
 const styles = {
   root: {
-    width: '100%',
+    flexGrow: 1,
   },
-  flex: {
-    flex: 1,
+  grow: {
+    flexGrow: 1,
   },
   menuButton: {
     marginLeft: -12,
     marginRight: 20,
   },
-  navLinks: {
-    marginRight: 10,
-    textDecoration: 'none',
-    '&:hover': {
-      backgroundColor: '#64B5F6',
-    }
-  },
-  navButtonWrapper: {
-    fontSize: '18px',
-    textTransform: 'none',
-    color: 'white',
-  },
-  appBar: {
-    backgroundColor: '#64B5F6',
-  }
 };
 
-function NavigationBar(props) {
+function ButtonAppBar(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar className={classes.appBar} position="fixed">
+      <AppBar position="static">
         <Toolbar>
-          <Typography type="title" color="inherit" className={classes.flex}>
-            <Link className={classes.navLinks} to="/">
-              <Button className={classes.navButtonWrapper}>
-                Home
-              </Button>
-            </Link>
+          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="title" color="inherit" className={classes.grow}>
+            News
           </Typography>
-          {localStorage.getItem('jwt') !== null ? <Link className={classes.navLinks} to="/profile">
-            <Button className={classes.navButtonWrapper}>
-              Profile
-            </Button>
-          </Link> : ""}
-          
-          <Link clasclssName={classes.navLinks} to="/ResultsPage" color="contrast">
-            <Button className={classes.navButtonWrapper}>
-              Results
-            </Button>
-          </Link>
+          <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </div>
   );
 }
 
-NavigationBar.propTypes = {
+ButtonAppBar.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(NavigationBar);
-
+export default withStyles(styles)(ButtonAppBar);

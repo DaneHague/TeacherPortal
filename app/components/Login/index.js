@@ -35,6 +35,14 @@ const StyledTextField = withStyles({
   }
 })(TextField);
 
+const NewButton = withStyles({
+  root: {
+    backgroundColor: "#427eed",
+    '&:hover': {
+      backgroundColor: '#E3F2FD',
+      color: '#90CAF9'
+  }}
+})(Button);
 
 
 class Login extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -64,9 +72,9 @@ class Login extends React.Component { // eslint-disable-line react/prefer-statel
           variant="outlined"
           />
           <Grid item xs={12}>
-            <Button variant="contained" color="secondary">
+            <NewButton variant="contained" color="secondary">
               Sign In
-            </Button>
+            </NewButton>
           </Grid>
         </StyledPaper>
       </StyledGrid>

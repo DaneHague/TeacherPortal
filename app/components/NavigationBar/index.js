@@ -20,13 +20,16 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
+  appColour: {
+    backgroundColor: "#427eed",
+  }
 };
 
 function ButtonAppBar(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="secondary">
+      <AppBar position="static" className={classes.appColour}>
         <Toolbar>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />

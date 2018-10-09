@@ -21,8 +21,14 @@ const styles = {
     marginRight: 20,
   },
   appColour: {
-    backgroundColor: "#427eed",
-  }
+    backgroundColor: "#2040cc",
+  },
+  btnColour: {
+    backgroundColor: "#efeded",
+    '&:hover': {
+      backgroundColor: '#5b5858',
+      color: '#ffffff'
+  }}
 };
 
 function ButtonAppBar(props) {
@@ -38,7 +44,7 @@ function ButtonAppBar(props) {
             Welcome
           </Typography>
           <Link to="login">
-            <Button color="inherit">Login</Button>
+            <Button color="inherit" className={classes.btnColour}>Login</Button>
           </Link>
         </Toolbar>
       </AppBar>

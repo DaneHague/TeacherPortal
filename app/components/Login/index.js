@@ -37,10 +37,10 @@ const StyledTextField = withStyles({
 
 const NewButton = withStyles({
   root: {
-    backgroundColor: "#427eed",
+    backgroundColor: "#2040cc",
     '&:hover': {
       backgroundColor: '#E3F2FD',
-      color: '#90CAF9'
+      color: '#2040cc'
   }}
 })(Button);
 
